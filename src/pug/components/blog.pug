@@ -1,0 +1,80 @@
+-
+  var blogData = [
+    {
+      img: imgAPI.photo[0],
+      title: 'Drawing History with Wiki Unseen',
+      desc:
+        'This month, we celebrated Black History Month and the launch of Wiki Unseen…'
+    },
+    {
+      img: imgAPI.photo[1],
+      title: 'Creatives Resolutions for 2022',
+      desc:
+        'For many of us, the beginning of the year signals a new start.'
+    },
+    {
+      img: imgAPI.photo[2],
+      title: 'Top 3 Visual Trends of 2021',
+      desc:
+        'We took a moment to look back and reflect on all the incredible work.'
+    },
+    {
+      img: imgAPI.photo[3],
+      title: 'Unlock Your Creative Career',
+      desc:
+        'Over 160 million people have visited Behance in search of inspiration'
+    },
+    {
+      img: imgAPI.photo[4],
+      title: 'Company that aligns with your values',
+      desc:
+        'Finding a company that aligns with your values and career aspirations.'
+    },
+    {
+      img: imgAPI.photo[5],
+      title: 'Tips for e-commerce photography',
+      desc:
+        'How to elevate your professional ecommerce product photography.'
+    }
+  ]
+
+include cards/blog-post.pug
+include title.pug
+
+.root
+  .floating-title
+    +title-main
+      | #{$t.femine_landing.blog_title} 
+      strong #{$t.femine_landing.blog_titlebold}
+    p.mb-0.use-text-paragraph #{$t.femine_landing.blog_desc}
+    a.btn-flat.primary.link(href='#') luxi-theme.blog.com
+  .slider-wrap
+    .carousel
+      |
+      |
+      button.btn-icon.nav.prev.waves-effect#prev_blog
+        |
+        |
+        i.ion-ios-arrow-back
+        |
+        |
+      |
+      |
+      .slick-carousel#news_carousel(data-length=blogData.length)
+        .item.item-props-first.show-md-up
+          div
+        each item in blogData
+          .item
+            +blog-post(item.img, item.title, item.desc)
+        .item.item-props-last.show-md-up
+          div
+      |
+      |
+      button.btn-icon.nav.next.waves-effect#next_blog
+        |
+        |
+        i.ion-ios-arrow-forward
+        |
+        |
+      |
+      |

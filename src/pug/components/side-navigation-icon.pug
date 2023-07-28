@@ -1,0 +1,15 @@
+.navigation
+  nav.nav-menu
+    .scrollactive-nav
+      a.logo.anchor-link(href='#banner')
+        img(src=assets+brand.femine.img alt='logo')/
+    .menu
+      ul.collection.scrollactive-nav.scrollnav
+        each item in menu.femine
+          li.collection-item.link.anchor-link
+            span.deco
+            a(href='#'+item.name)
+              .icon
+                span(class=item.icon)
+            span.text.waves-effect
+              | #{$t.femine_landing['header_'+item.name]}
